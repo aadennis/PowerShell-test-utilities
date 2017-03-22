@@ -2,7 +2,7 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
 . "$here\$sut"
 
-Describe "Get-TestFilePairIsSame" {
+Describe "Test-FilePairIsSame tests" {
     It "returns $true if files are the same" {
         $newFile1 = New-Item -Path TestDrive:/"x1.txt"
         $newFile2 = New-Item -Path TestDrive:/"x2.txt"
@@ -28,5 +28,17 @@ Describe "Get-TestFilePairIsSame" {
         Remove-Item -Path TestDrive:/"x2.txt"
 
     }
-
 }
+
+Describe "Get-ZipFileNames tests" {
+    It "Gets the filenames from the given zip file" {
+         Get-ZipFileNames 'c:\temp\specialzip.zip' "c:\temp\StickItHerex.txt" 
+    }
+}
+
+<#
+    It "does stuff if first file is not found" {
+        $newFile1 = $null
+         Test-FilePairIsSame $newFile1 $newFile2
+    }
+#>
