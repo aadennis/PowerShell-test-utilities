@@ -8,4 +8,4 @@ Just to save a few keystrokes in getting get the test/SUT folder structure the w
 It still uses the failing dummy test for $true -eq $false, and does not (right now) reference the SUT from the dummy test.
 
 ![](./assets/images/NewFixtureTree01.PNG)
-
+![](./assets/images/NewFixtureTree02.PNG)
