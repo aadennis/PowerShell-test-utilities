@@ -1,5 +1,4 @@
 # TestUtilities
-TestUtilities.ps1
 
 # New-PesterFixture.ps1
 New-PesterFixture.ps1
