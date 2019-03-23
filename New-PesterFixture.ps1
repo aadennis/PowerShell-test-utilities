@@ -1,4 +1,4 @@
-﻿function Get-TestTemplate {
+function Get-TestTemplate {
 return @" 
 `$here = Split-Path -Parent `$MyInvocation.MyCommand.Path
 `$sut = (Split-Path -Leaf `$MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
@@ -38,7 +38,12 @@ function New-PesterFixture (
     Move-Item -Path "$testDir/$applicationName.ps1" -Destination "$productionDir/$applicationName.ps1"
 }
 
-cd /temp/SomeRepoRoot
+$repoRoot = "c:\temp\SomeRepoRoot"
+if (-not(Test-Path -Path $repoRoot)) {
+    "Creating [$repoRoot]"
+    New-Item -Path $repoRoot
+}
+cd $repoRoot
 New-PesterFixture
 Invoke-Pester
 
