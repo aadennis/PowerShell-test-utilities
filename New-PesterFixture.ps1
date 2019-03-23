@@ -16,12 +16,13 @@ Describe "$applicationName" {
 .Synopsis
   Create a production/test structure using New-Fixture to kick things off, including a dummy test   
 .Description
-  By default, beneath the current folder, the function creates a Production folder and a sibling Tests folder.
+  By default, beneath the current folder, the function creates a Production folder and a sibling 
+  Tests folder.
   The default name of the created application is Calculator.
-  By default, New-Fixture (outside the control of this function) creates a single function inside (the default) Calculator.ps1,
-  with the same name as the SUT file, i.e. "Calculator".
-  The test inside the generated Calculator.tests.ps1 tests the result of $true -eq $false and therefore a) fails, b) is not bound
-  at first to the SUT.
+  By default, New-Fixture (outside the control of this function) creates a single function inside 
+  (the default) Calculator.ps1, with the same name as the SUT file, i.e. "Calculator".
+  The test inside the generated Calculator.tests.ps1 tests the result of $true -eq $false and 
+  therefore a) fails, b) is not bound at first to the SUT.
 .Example
    New-PesterFixture
 #>
